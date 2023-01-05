@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+
+  web:
+    build: .\gps_monitor
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./my_app/:/usr/src/gps_monitor/
+
+    ports:
+      - 8000:8000
+    env_file:
+      - ./.env.dev
+    depends_on:
+      - db
+  db:
+    build: dockerfile_db
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data/
+
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=hello_django
+      - POSTGRES_DB=geodb
+
+volumes:
+  postgres_data:
