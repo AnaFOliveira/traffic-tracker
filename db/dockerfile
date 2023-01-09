@@ -1,0 +1,5 @@
+FROM mdillon/postgis
+ENV POSTGRES_USER=postgres
+ENV POSTGRES_PASSWORD=hello_django
+ENV POSTGRES_DB=geodb
+COPY init.sql /docker-entrypoint-initdb.d/

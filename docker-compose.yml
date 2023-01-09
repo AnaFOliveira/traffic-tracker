@@ -15,7 +15,7 @@ services:
     depends_on:
       - db
   db:
-    build: dockerfile_db
+    build: .\db
     volumes:
       - ./postgres_data:/var/lib/postgresql/data/
 
