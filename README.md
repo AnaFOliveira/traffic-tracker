@@ -1,3 +1,25 @@
+For the creation of this project, I've divided it in two separate containers being run in cooperation. 
+On one, the database suggested in the documentation, the mdillon/postgis/, as this is the best database to deal with the geographic component of the
+data. The other container is an app created with the Django framework (TODO).
+
+![img_1.png](img_1.png)
+
+Until this point, I've created a simples Django application, dockerized it and I've being working on the communication
+of the two (database and application). During this part, a number of bugs happened involving the use of the docker-compose file, namely with :
+    - the volumes created for sharing scripts that should only be used once, and not repeated when creating the images/containers. An example is the creation of the initial database, so that the data is not lost
+    - the creation of the database automatically inside the corresponding image using a makefile and bash. Initially this was created manually, and then automated using this solution, which I haven’t created before  
+    - some difficulty adapting the solution from postgres to postGis (namely the dependencies from Django)
+
+At this point, I'm trying to solve the dependencies, as some of the packages such as GEOs is not being properly recognized and so the application is not fully adapted to PostGis yet. 
+application is not properly adapted from postgres to postgis. 
+
+As soon as the application and the database are communicating properly, I will define the models and populate the 
+database with the provided data and then define the users authorization and endpoints mentioned.
+
+
+
+_________
+
 # traffic-tracker
 
 Este projeto está dividido em dois containers individuais sendo corridos em cooperação. Num container está a base de dados sugerida na documentação (mdillon/postgis), sendo esta a mais adequada para a gestão dos dados tendo em conta a 
@@ -20,25 +42,3 @@ reconhecidos e portanto a aplicação não está completamente adaptada do postg
 
 Assim que a aplicação e a base de dados estejam a comunicar devidamente, irei definir os modelos e popular a base
 de dados com os dados providenciados, definir as autorizações dos utilizadores e os endpoints mencionados.
-
-
-
-________
-
-For the creation of this project, I've divided it in two separate containers being run in cooperation. 
-On one, the database suggested in the documentation, the mdillon/postgis/, as this is the best database to deal with the geographic component of the
-data. The other container is an app created with the Django framework (TODO).
-
-![img_1.png](img_1.png)
-
-Until this point, I've created a simples Django application, dockerized it and I've being working on the communication
-of the two (database and application). During this part, a number of bugs happened involving the use of the docker-compose file, namely with :
-    - the volumes created for sharing scripts that should only be used once, and not repeated when creating the images/containers. An example is the creation of the initial database, so that the data is not lost
-    - the creation of the database automatically inside the corresponding image using a makefile and bash. Initially this was created manually, and then automated using this solution, which I haven’t created before  
-    - some difficulty adapting the solution from postgres to postGis (namely the dependencies from Django)
-
-At this point, I'm trying to solve the dependencies, as some of the packages such as GEOs is not being properly recognized and so the application is not fully adapted to PostGis yet. 
-application is not properly adapted from postgres to postgis. 
-
-As soon as the application and the database are communicating properly, I will define the models and populate the 
-database with the provided data and then define the users authorization and endpoints mentioned.
