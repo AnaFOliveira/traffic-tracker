@@ -2,7 +2,7 @@ For the creation of this project, I've divided it in two separate containers bei
 On one, the database suggested in the documentation, the mdillon/postgis/, as this is the best database to deal with the geographic component of the
 data. The other container is an app created with the Django framework (TODO).
 
-![img_1.png](img_1.png)
+!![image](https://user-images.githubusercontent.com/38086218/213729102-00dc9a25-13d8-46fa-9599-eeef97de48a9.png)
 
 Until this point, I've created a simples Django application, dockerized it and I've being working on the communication
 of the two (database and application). During this part, a number of bugs happened involving the use of the docker-compose file, namely with :
@@ -25,7 +25,8 @@ _________
 Este projeto está dividido em dois containers individuais sendo corridos em cooperação. Num container está a base de dados sugerida na documentação (mdillon/postgis), sendo esta a mais adequada para a gestão dos dados tendo em conta a 
 sua componente geográfica. O outro container inclui a aplicação criada com a framework Django (ainda em processo).
 
-![img_1.png](img_1.png)
+![image](https://user-images.githubusercontent.com/38086218/213729064-169ff679-73d3-4a78-bddc-d60b155d9987.png)
+
 
 Até este momento, foi criada uma aplicação simples de Django e compartimentalizada, pelo que neste momento estou a trabalhar
 na comunicação entre ambas as imagens (base de dados e aplicação). Durante este processo, lidei com vários bugs relacionados
